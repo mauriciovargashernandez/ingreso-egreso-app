@@ -5,6 +5,7 @@ import { acciones } from '../shared/ui.actions';
 
 
 export const SET_USER = '[AUTH] Set User';
+export const UNSET_USER = '[AUTH] Unset User';
 
 export class SetUserAction implements Action {
   readonly type = SET_USER;
@@ -12,4 +13,8 @@ export class SetUserAction implements Action {
   constructor( public user: User ) {}
 }
 
-export type acciones = SetUserAction;
+export class UnsetUserAction implements Action {
+  readonly type = UNSET_USER;
+}
+
+export type acciones = SetUserAction | UnsetUserAction;
